@@ -1,0 +1,11 @@
+SELECT
+    cw.City,
+    COUNT(cw.Id)
+FROM
+    Emp_det AS ed INNER JOIN CityWorkers AS cw ON ed.Id = cw.Id
+GROUP BY
+    cw.City
+HAVING
+    AVG(ed.Age) > 25
+ORDER BY
+    cw.City ASC
